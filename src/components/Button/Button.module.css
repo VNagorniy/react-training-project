@@ -1,12 +1,23 @@
 .button {
 	color: #fff;
-	border-radius: 6px;
-	padding: 8px 30px;
 	font-family: inherit;
+	font-style: normal;
+	font-weight: 400;
+	border-radius: 29px;
 	border: none;
 	cursor: pointer;
 	transition: background 0.25s;
+}
+
+.small {
+	padding: 10px 25px;
 	font-size: 16px;
+}
+
+.big {
+	padding: 20px 60px;
+	font-size: 15px;
+	text-transform: uppercase;
 }
 .accent {
 	background: var(--primary-color);
