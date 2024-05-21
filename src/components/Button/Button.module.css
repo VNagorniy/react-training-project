@@ -8,10 +8,10 @@
 	transition: background 0.25s;
 	font-size: 16px;
 }
-.button:hover {
-	background: #222096;
+.accent {
+	background: var(--primary-color);
 }
 
-.accent {
-	background: #312eb5;
+.accent:hover {
+	background: var(--primary-hover-color);
 }
