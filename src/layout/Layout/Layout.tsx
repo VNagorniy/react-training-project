@@ -26,7 +26,7 @@ export function Layout() {
 			<div className={styles['sidebar']}>
 				<div className={styles['user']}>
 					<img className={styles['avatar']} src="/avatar.png" alt="Аватар пользователя" />
-					<div className={styles['name']}>Владимир Нагорный</div>
+					<div className={styles['name']}>{profile?.name}</div>
 					<div className={styles['email']}>{profile?.email}</div>
 				</div>
 				<div className={styles['menu']}>
