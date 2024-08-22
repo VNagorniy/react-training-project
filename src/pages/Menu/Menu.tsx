@@ -2,13 +2,13 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import Heading from '../../components/Heading/Heading';
 import Search from '../../components/Search/Search';
 import { PREFIX } from '../../helpers/API';
-import { Product } from '../../interfaces/product.interface';
+import { IProduct } from '../../interfaces/product.interface';
 import styles from './Menu.module.css';
 import axios, { AxiosError } from 'axios';
 import { MenuList } from './MenuList/MenuList';
 
 export function Menu() {
-	const [products, setProducts] = useState<Product[]>([]);
+	const [products, setProducts] = useState<IProduct[]>([]);
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [error, setError] = useState<string | undefined>();
 	const [filter, setFilter] = useState<string>();
@@ -20,7 +20,7 @@ export function Menu() {
 	const getMenu = async (name?: string) => {
 		try {
 			setIsLoading(true);
-			const { data } = await axios.get<Product[]>(`${PREFIX}/products`, {
+			const { data } = await axios.get<IProduct[]>(`${PREFIX}/products`, {
 				params: {
 					name
 				}

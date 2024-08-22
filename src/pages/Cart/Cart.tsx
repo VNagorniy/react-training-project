@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Heading from '../../components/Heading/Heading';
 import CartItem from '../../components/CartItem/CartItem';
 import { useEffect, useState } from 'react';
-import { Product } from '../../interfaces/product.interface';
+import { IProduct } from '../../interfaces/product.interface';
 import axios from 'axios';
 import { PREFIX } from '../../helpers/API';
 import styles from './Cart.module.css';
@@ -13,7 +13,7 @@ import Button from '../../components/Button/Button';
 
 const DELIVERY_FEE = 169;
 export function Cart() {
-	const [cartProducts, setCartProducts] = useState<Product[]>([]);
+	const [cartProducts, setCartProducts] = useState<IProduct[]>([]);
 	const items = useSelector((s: RootState) => s.cart.items);
 	const jwt = useSelector((s: RootState) => s.user.jwt);
 	const dispatch = useDispatch<AppDispatch>();
@@ -30,7 +30,7 @@ export function Cart() {
 		.reduce((acc, i) => (acc += i), 0);
 
 	const getItem = async (id: number) => {
-		const { data } = await axios.get<Product>(`${PREFIX}/products/${id}`);
+		const { data } = await axios.get<IProduct>(`${PREFIX}/products/${id}`);
 		return data;
 	};
 
